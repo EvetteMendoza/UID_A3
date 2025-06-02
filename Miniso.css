@@ -23,7 +23,7 @@ body {
 }
 
 .container {
-    width: 90%;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
@@ -142,8 +142,6 @@ header nav ul li a:hover {
     color: #333;
 }
 
-
-/* Hero Section */
 /* Hero Section */
 .hero-section {
     background-image: url('miniso\ banner.jpg'); /* 1. YOUR IMAGE PATH HERE */
@@ -151,7 +149,7 @@ header nav ul li a:hover {
     background-position: center center;             /* 3. Center the image */
     background-repeat: no-repeat;                   /* 4. Don't repeat the image */
     width: 100%;                                    /* 5. Ensure section takes full width */
-    height: 450px; /* Adjust height as needed to show enough of your image and fit content */
+    height: 500px; /* Adjust height as needed to show enough of your image and fit content */
     /* display: flex; align-items: center; etc. are for the CONTENT inside */
     display: flex;
     align-items: center;
@@ -162,6 +160,10 @@ header nav ul li a:hover {
     text-align: left; /* This also likely belongs on .hero-content */
     position: relative; /* Good for positioning child elements if needed */
 }
+
+.spacer-half-line {
+    height: 0.5em;
+  }
 
 .hero-content {
     max-width: 500px;
