@@ -4,9 +4,20 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* <weight>: Use a value from 100 to 700 */
+/* <uniquifier>: Use a unique and descriptive class name */
+
+.kalnia-bodyfont {
+  font-family: "Kalnia", serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
 
 body {
-    font-family: 'Kalnia', sans-serif;
+    font-family: 'Kalnia';
     line-height: 1.6;
     color: #333;
     background-color: #f9f9f9; /* Light background for the whole page */
