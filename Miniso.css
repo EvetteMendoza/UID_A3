@@ -79,11 +79,11 @@ header {
 
 header nav {
     margin-left: auto;
-    margin-right: 30px;
 }
 
 header nav ul {
     display: flex;
+    align-items: center;
 }
 
 header nav ul li {
@@ -103,6 +103,7 @@ header nav ul li a:hover {
 .header-actions {
     display: flex;
     align-items: center;
+    gap: 15px;
 }
 
 .search-bar {
@@ -111,7 +112,6 @@ header nav ul li a:hover {
     background-color: #f0f0f0;
     border-radius: 20px;
     padding: 5px 5px 5px 15px;
-    margin-right: 15px;
 }
 
 .search-bar input {
@@ -131,13 +131,21 @@ header nav ul li a:hover {
 
 .icon-link {
     font-size: 1.2rem;
-    color: #555;
-    margin-left: 20px;
+    color:#555;
     transition: color 0.3s ease;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
 }
 
 .icon-link:hover {
     color: #E60012;
+}
+
+.cart-item-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
 }
 
 .mobile-menu-toggle {
@@ -422,7 +430,9 @@ footer p {
         flex-basis: 50%;
         justify-content: flex-end;
         margin-top: 10px; /* Space if search bar wraps */
+        gap: 10px;
     }
+    
      .search-bar {
         /* If you want search to be full width on mobile: */
         /* flex-basis: 100%; 
@@ -503,6 +513,11 @@ footer p {
 }
 
 /* For JS-toggled mobile menu (example) */
+
+header nav{
+    display: none;
+}
+
 header nav.active {
     display: flex;
     flex-direction: column;
@@ -513,11 +528,13 @@ header nav.active {
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     padding: 10px 0;
+    z-index: 999;
 }
 header nav.active ul {
-    flex-direction: column;
-    width: 100%;
+    margin: 10px 0;
+    margin-left: 0;
 }
+
 header nav.active ul li {
     margin: 10px 0;
     text-align: center;
