@@ -3,36 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MINISO </title>
-    <link rel="stylesheet" href="Miniso.css">
+    <title>MINISO - Home Page</title>
+    <link rel="stylesheet" href="style.css">
     <!-- Font Awesome for icons -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts (Optional - for a similar feel) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header> 
+
+    <!-- Header Section -->
+    <header>
         <div class="container header-container">
-        <img src="miniso logo.png" alt="MINISO logo" class="logo">
+            <div class="logo">
+                <img src="miniso logo.png" alt="MINISO Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <a href="#" class="icon-link"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" class="icon-link"><i class="fas fa-user"></i></a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-        <nav class="main-nav"> </nav>
-        <ul> 
-            <li><a href="Miniso.html"> Home </a></li>
-            <li><a href="Products.html"> Products </a></li>
-            <li><a href="Cart.html"> Cart </a></li>
-        </ul>
-    </nav>
-    <div class="header-actions">
-        <div class="search-bar"> 
-            <input type="search" placeholder="Search products...">
-            <button><i class="fas fa search"></i>type="button"> [S] </button> <!-- Search icon -->
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <p>Our #1 Top Seller</p>
+                <h1>Miniso Colorful World</h1>
+                <h2>Fragrance</h2>
+            </div>
+        </section>
+
+        <!-- New In Section -->
+        <section class="new-in-section">
+            <div class="container">
+                <h2>New In</h2>
+                <div class="product-carousel-wrapper">
+                    <button class="carousel-arrow prev-arrow" aria-label="Previous"><</button>
+                    <div class="product-carousel">
+                        <div class="product-card">
+                            <img src="https://via.placeholder.com/200x200/f0f0f0/333?text=Fragrance" alt="Autumn Love Fragrance">
+                            <h3>MINISO Autumn Love Fragrance</h3>
+                            <button class="add-to-cart-btn">+</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://via.placeholder.com/200x200/f0f0f0/333?text=Headphones" alt="Bluetooth Headphones">
+                            <h3>MINISO Bluetooth Headphones</h3>
+                            <button class="add-to-cart-btn">+</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://via.placeholder.com/200x200/f0f0f0/333?text=Handbag" alt="Winnie the Pooh Handbag">
+                            <h3>MINISO Winnie the Pooh Handbag Disney</h3>
+                            <button class="add-to-cart-btn">+</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://via.placeholder.com/200x200/f0f0f0/333?text=Mirror" alt="Kuromi Makeup Mirror">
+                            <h3>MINISO Kuromi Makeup Mirror</h3>
+                            <button class="add-to-cart-btn">+</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://via.placeholder.com/200x200/f0f0f0/333?text=Product+5" alt="Another Product">
+                            <h3>MINISO Another Cool Item</h3>
+                            <button class="add-to-cart-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="carousel-arrow next-arrow" aria-label="Next">></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shop by Category Section -->
+        <section class="category-section">
+            <div class="container">
+                <h2>Shop by Category</h2>
+                <div class="category-grid">
+                    <div class="category-item featured-category">
+                        <div class="category-icon-bg">
+                           <img src="https://via.placeholder.com/80x80/E60012/FFFFFF?text=🧸" alt="Toys Icon">
+                        </div>
+                        <p>Toys and Plushies</p>
+                    </div>
+                    <div class="category-item">
+                        <div class="category-icon-bg">
+                            <img src="https://via.placeholder.com/80x80/E60012/FFFFFF?text=💄" alt="Beauty Icon">
+                        </div>
+                        <p>Beauty Care</p>
+                    </div>
+                    <div class="category-item">
+                        <div class="category-icon-bg">
+                            <img src="https://via.placeholder.com/80x80/E60012/FFFFFF?text=✏️" alt="Stationery Icon">
+                        </div>
+                        <p>Stationery</p>
+                    </div>
+                    <div class="category-item">
+                        <div class="category-icon-bg">
+                            <img src="https://via.placeholder.com/80x80/E60012/FFFFFF?text=🎧" alt="Electronics Icon">
+                        </div>
+                        <p>Electronics</p>
+                    </div>
+                    <div class="category-item">
+                        <div class="category-icon-bg">
+                           <img src="https://via.placeholder.com/80x80/E60012/FFFFFF?text=🎒" alt="Travel Icon">
+                        </div>
+                        <p>Travel and Outdoor</p>
+                    </div>
+                    <div class="category-item">
+                        <div class="category-icon-bg">
+                           <img src="https://via.placeholder.com/80x80/E60012/FFFFFF?text=🍴" alt="Homeware Icon">
+                        </div>
+                        <p>Homeware</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sign Up Section -->
+        <section class="signup-section">
+            <div class="container">
+                <h2>SIGN UP TO OUR VIP LIST</h2>
+                <p>Get exclusive promotions and discount offers</p>
+                <form class="signup-form">
+                    <input type="email" placeholder="your email here..." required>
+                    <button type="submit">SUBSCRIBE</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 MINISO Clone. All rights reserved.</p>
+            <p>This is a demo website for educational purposes.</p>
         </div>
-        <a href="#" class="icon-link"><i class="fas fa-shopping-cart"></i></a>
-        <a href="#" class="icon-link"><i class="fas fa-user"></i></a>
-    </div>
-    <button class="mobile-menu-toggle" aria-label="Toggle menu">
-        <i class="fas fa-bars"></i>
-    </button>
-</div>
-</header>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
