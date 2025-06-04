@@ -71,6 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
             displayQuery = query;
         }
         if (searchTermDisplay) searchTermDisplay.textContent = displayQuery;
-        if(searchTermDisplay2) searchTermDisplay2= displayQuery
+        if (searchTermDisplay2) searchTermDisplay2.textContent = displayQuery;
     }
 });

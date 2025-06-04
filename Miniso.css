@@ -385,7 +385,7 @@ header nav ul li a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointerl
+    cursor: pointer;
 }
 
 .filter-group ul {
@@ -509,7 +509,7 @@ header nav ul li a:hover {
 }
 
 
-.scroll-to-top-btn {
+.scroll-to-top-btn.visible {
     opacity: 1;
     visibility: visible;
 }
