@@ -4,7 +4,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* <weight>: Use a value from 100 to 700 */
 
 .kalnia-bodyfont {
   font-family: "Kalnia", serif;
@@ -60,7 +59,11 @@ button {
 /* Header */
 header {
     background-color: #fff;
-    padding: 15px 0;
+    /* padding: 15px 0; */
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 0;
+    padding-right: 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
@@ -152,12 +155,11 @@ header nav ul li a:hover {
 
 /* Hero Section */
 .hero-section {
-    background-image: url('miniso\ banner.jpg');
+    /*background-image: url('miniso\ banner.jpg'); */
     background-size: cover;                        
     background-position: center center;          
     background-repeat: no-repeat;                  
     width: 100%;                                   
-    height: 520px; /* Adjust height as needed to show enough of your image and fit content */
     /* display: flex; align-items: center; etc. are for the CONTENT inside */
     display: flex;
     align-items: center;
@@ -167,10 +169,27 @@ header nav ul li a:hover {
     /* padding-left: 10%; */ /* You might want this on .hero-content instead */
     text-align: left; /* This also likely belongs on .hero-content */
     position: relative; /* Good for positioning child elements if needed */
+    overflow: hidden;
+}
+
+.hero-section img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    color: #fff;
 }
 
 .spacer-half-line {
-    height: 1em;
+    /*height: 1em;*/
   }
 
 /* New In Section */
