@@ -35,4 +35,42 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    const scrollToTopBtn = document.querySelector ('.scroll-to-top-btn');
+    if (scrollToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if(window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+        scrollToTopBtn.addEventListener('click', (e)=> {
+            e.preventDefault();
+            window.scrollTo({
+                top:0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // -- Specific for shop.html -- 
+    if(document.body.classList.contains('shop-page')) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category');
+        const query =urlParams.get('q');
+
+        const searchTermDisplay = 
+        document.getElementById('searchTermDisplay');
+        const searchTermDisplay2 =
+        document.getElementById('searchTermDisplay2');
+
+        let displayQuery = "products"; 
+        if (category) {
+            displayQuery = category.replace(/-/g, ' ').replace (/\b\w/g, l => l.toUpperCase());
+        } else if (query) {
+            displayQuery = query;
+        }
+        if (searchTermDisplay) searchTermDisplay.textContent = displayQuery;
+        if(searchTermDisplay2) searchTermDisplay2= displayQuery
+    }
 });

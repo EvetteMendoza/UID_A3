@@ -4,8 +4,177 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> MINISO - Shop </title>
+
+    <!-- My stylesheet-->
+    <link rel="stylesheet" href="Miniso.css">
+
+    <!-- Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalnia:wght@100..700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
-    
+
+<body class="shop-page">
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="Miniso.html"><img src="miniso logo.png" alt="MINISO Logo"></a> <!-- Linking logo back to home -->
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="Miniso.html">Home</a></li> <!-- link back to home -->
+                    <li><a href="shop.html">Shop</a></li> <!-- active link back to this page -->
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search..."
+                    id="shopPageSearchInput">
+                    <button id="shopPageSearchInput"><i class="fas fa-search"></i></button>
+                </div>
+                <a href="shopping-cart-icon.png" class="icon-link cart-icon-link" 
+                aria-label="Shopping Cart"> 
+                <i class="fas fa-shopping-cart"></i>
+                </a>
+                <a href="search-icon-2048x2048-cmujl7en-1.png" class="icon-link" 
+                aria-label="User Account"><i class="fas fa-user"></i>
+            </a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    <main class="shop-page-main">
+        <div class="container shop-page-container">
+            <aside class="filters-sidebar">
+                <h3> Filters </h3>
+                <div class="filter-group">
+                    <h4> Category <i class="fas fa-chevron-down"></i>
+                    </h4>
+                    <ul> 
+                        <li><a href="shop.html?category=toys-plushies"> Toys & Plushies </a></li>
+                        <li><a href="shop.html?category=beauty"> Beauty Care </a></li>
+                        <li><a href="shop.html?category=stationary"> Stationary </a></li>
+                        <li><a href="shop.html?category=electronics"> Electronics </a></li>
+                        <li><a href="shop.html?category=travel"> Travel & Outdoor </a></li>
+                        <li><a href="shop.html?category=homeware"> Homeware </a></li>
+                    </ul>
+                </div>
+                <div class="filter-group">
+                    <h4> Price <i class="fas fa-chevron-down"></i></h4>
+                </div>
+                <div class="filter-group">
+                    <h4> Colour <i class="fas fa-chevron-down"></i></h4>
+                    <ul>
+                        <li><label><input type="checkbox" name="color" value="pink"> Pink </label></li>
+                        <li><label><input type="checkbox" name="color" value="red"> Red </label></li>
+                        <li><label><input type="checkbox" name="color" value="yellow"> Yellow </label></li>
+                        <li><label><input type="checkbox" name="color" value="white"> White </label></li>
+                    </ul>
+                    </div>
+                    <div class="filter-group">
+                        <h4> Size <i class="fas fa-chevron-down"></i></h4>
+                        </div>
+                        <div class="filter-group">
+                            <h4> Waterproof <i class="fas fa-chevron-down"></i></h4>
+                        </div>
+                    </aside>
+
+                    <section class="products-listing-area">
+                        <div class="search-results-header">
+                            <p class="breadcrumbs"> Home > Search reults: "<span 
+                                id="searchTermDisplay">plushie</span></p>
+                                <h2> Here's what we found for "<span
+                                id="searchTermDisplay2">plushie</span></h2>
+                                <div class="sort-by-container">
+                                    <label for="sort-by">Sort by:</label>
+                                    <select name="sort-by" id="sort-by">
+                                        <option value="featured">Featured</option>
+                                        <option value="price-asc">Price: Low to High </option>
+                                        <option value="price-desc">Price: High to Low</option>
+                                        <option value="newest">Newest</option>
+                                    </select>
+                                </div>
+                                </div>
+
+                                <div class="shop-product-grid">
+                                    <!-- Product cards-->
+                                     <div class="product-card">
+                                        <img src="cat front.png" alt="Sakura Cat Plushie Toy">
+                                        <h3> MINISO Sakura Cat Plushie Toy </h3>
+                                        <p class="product-price">$30</p>
+                                        <button class="add-to-cart-btn">+</button>
+                                     </div>
+                                     <div class="product-card">
+                                        <img src="yellow bear front.png" alt="We Bare Bears Plushie Toy">
+                                        <h3> MINISO We Bare Bears Plushie Toy</h3>
+                                        <p class="product-price">$29</p>
+                                        <button class="add-to-cart-btn">+</button>
+                                     </div>
+                                     <div class="product-card">
+                                        <img src="pig front.png" alt="Oink Plushie Toy">
+                                        <h3> MINISO Oink Plushie Toy </h3>
+                                        <p class="product-price">$22</p>
+                                        <button class="add-to-cart-btn">+</button>
+                                     </div>
+                                     <div class="product-card">
+                                        <img src="panda persp.png" alt="Panda Plushie Toy">
+                                        <h3> MINISO We Bare Bears Panda Plushie Toy </h3>
+                                        <p class="product-price">$30</p>
+                                        <button class="add-to-cart-btn">+</button>
+                                     </div>
+                                     <div class="product-card">
+                                        <img src="mickey plushie miniso.png" alt="Mickey Plushie Toy" class="product-image-large">
+                                        <h3> MINISO Mickey Mouse Plushie Toy Disney</h3>
+                                        <p class="product-price">$27</p>
+                                        <button class="add-to-cart-btn">+</button>
+                                     </div>
+                                     <div class="product-card">
+                                        <img src="bear in halloween purple.png" alt="Panda Halloween Plushie Toy">
+                                        <h3> MINISO We Bare Bears Panda Halloween Plushie Toy </h3>
+                                        <p class="product-price">$29</p>
+                                        <button class="add-to-cart-btn">+</button>
+                                     </div>
+                                     <div class="product-card">
+                                        <img src="penguin pink.png" alt="Penguin Plushie Toy">
+                                        <h3> MINISO Pink Penguin Plushie Toy </h3>
+                                        <p class="product-price">$22</p>
+                                        <button class="add-to-cart-btn">+</button>
+                                     </div>
+                                     <div class="product-card">
+                                        <img src="capybara.png" alt="Capybara Plushie Toy">
+                                        <h3> MINISO Capybara Plushie Toy </h3>
+                                        <p class="product-price">$30</p>
+                                        <button class="add-to-cart-btn">+</button>
+                                     </div>
+                                     <div class="product-card">
+                                        <img src="mickey bag 2.png" alt="Minnie Plushie Toy">
+                                        <h3> MINISO Minnie Mouse Plushie Toy Disney </h3>
+                                        <p class="product-price">$27</p>
+                                        <button class="add-to-cart-btn">+</button>
+                                     </div>
+                                </div>
+                    </section>
+                    </div>
+                </main>
+ 
+     <footer>
+        <div class="container">
+            <p>© 2025 MINISO Clone. All rights reserved.</p>
+            <p>This is a demo website for university course requirement purposes.</p>
+            <p>Student Name: Evette Mendoza </p>
+        </div>
+
+        <a href "#" class="scroll-to-top-btn" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></a>
+    </footer>
+
+    <script src="Miniso.js"></script>
 </body>
 </html>

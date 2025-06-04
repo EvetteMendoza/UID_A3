@@ -343,6 +343,177 @@ header nav ul li a:hover {
     color: #444;
 }
 
+/* shop.html css */
+.category-link-wrapper {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.shop-page-main {
+    padding: 30px 0;
+}
+
+.shop-page-container {
+    display: flex;
+    gap: 30px;
+}
+
+.filters-sidebar {
+    flex: 0 0 260px;
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    height: fit-content;
+}
+
+.filters-sidebar h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #444;
+}
+
+.filter-group {
+    margin-bottom: 25px;
+}
+
+.filter-group h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointerl
+}
+
+.filter-group ul {
+    list-style: none;
+    padding-left: 5px;
+}
+
+.filter-group ul li {
+    margin-bottom: 8px
+}
+
+.filter-group ul li a,
+.filter-group ul li label {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.filter-group ul li a:hover,
+.filter-group ul li label:hover {
+    color: #fff;
+}
+
+.filter-group input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: #E60012;
+}
+
+.products-listing-area {
+    flex: 1;
+}
+
+.search-results-header {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.search-reults-header .breadcrumbs a {
+    color: #555;
+    text-decoration: none;
+}
+.search-results-header .breadcrumbs a:hover{
+    text-decoration: underline;
+}
+
+.search-results-header h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.sort-by-container {
+    text-align: right;
+}
+
+.sort-by-container label {
+    margin-right: 10px;
+    font-size: 0.9rem;
+}
+
+.sort-by-container select {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 0.9rem;
+}
+
+.shop-product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); /*responsive grid */
+    gap: 25px;
+}
+
+.product-card .product-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+/* Adjustments for product cards on shop page if needed */
+.shop-product-grid .product-card {
+    /* any specific overrides for the shop page product cards */
+    border: 1px solid #ddd; /* Example border from image */
+    border-radius: 10px;
+}
+
+.shop-product-grid .product-card img {
+    height: 200px; /* Or adjust as needed for plushie proportions */
+    object-fit: contain; /* Usually best for products */
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.shop-product-grid .product-card img.product-image-large {
+    height: 280px;
+}
+
+.scroll-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #E60012;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 999;
+    opacity: 0; /*hidden by default */
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+
+.scroll-to-top-btn {
+    opacity: 1;
+    visibility: visible;
+}
+
 /* Sign Up Section */
 .signup-section {
     background-color: #E60012; /* MINISO Red */
