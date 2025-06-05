@@ -773,7 +773,7 @@ footer p {
 
 #proceedToCheckoutBtn {
     display: block;
-    width: 100px;
+    width: 100%;
     padding: 14px;
     background-color: #000;
     color: #fff;

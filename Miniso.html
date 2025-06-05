@@ -67,32 +67,32 @@
                 <div class="product-carousel-wrapper">
                     <button class="carousel-arrow prev-arrow" aria-label="Previous"><</button>
                     <div class="product-carousel">
-                        <div class="product-card" data-id="fragrance1" data-name="MINISO Autumn Love Fragrance" 
-                        data price="15.00" data-image="fragrance 1.png" data-description="100 ml Bottle">
+                        <div class="product-card" data-id="fragrance1" data-name="MINISO Autumn Love Fragrance"
+                        data-price="15.00" data-image="fragrance 1.png" data-description="100 ml Bottle">
                             <img src="fragrance 1.png" alt="Autumn Love Fragrance">
                             <h3>MINISO Autumn Love Fragrance</h3>
                             <button class="add-to-cart-btn">+</button>
                         </div>
-                        <div class="product-card" data-id="headphones1" data-name="MINISO Bluetooth Headphones" 
-                        data price="25.00" data-image="headphone 1.png" data-description="Wireless, Over-ear">
+                        <div class="product-card" data-id="headphones1" data-name="MINISO Bluetooth Headphones"
+                        data-price="25.00" data-image="headphone 1 .png" data-description="Wireless, Over-ear">
                             <img src="headphone 1 .png" alt="Bluetooth Headphones">
                             <h3>MINISO Bluetooth Headphones</h3>
                             <button class="add-to-cart-btn">+</button>
                         </div>
-                        <div class="product-card" data-id="winniethepooh1" data-name="MINISO Winnie the Pooh Handbag" 
-                        data price="20.00" data-image="winnie the pooh bag.png" data-description="Disney Winnie the Pooh bag">
+                        <div class="product-card" data-id="winniethepooh1" data-name="MINISO Winnie the Pooh Handbag"
+                        data-price="20.00" data-image="winnie the pooh bag.png" data-description="Disney Winnie the Pooh bag">
                             <img src="winnie the pooh bag.png" alt="Winnie the Pooh Handbag">
                             <h3>MINISO Winnie the Pooh Handbag Disney</h3>
                             <button class="add-to-cart-btn">+</button>
                         </div>
-                        <div class="product-card" data-id="kuromimirror1" data-name="MINISO Kuromi Makeup Mirror" 
-                        data price="10.00" data-image="purple mirrors.png" data-description="purple Kuromi makeup mirror">
+                        <div class="product-card" data-id="kuromimirror1" data-name="MINISO Kuromi Makeup Mirror"
+                        data-price="10.00" data-image="purple mirrors.png" data-description="purple Kuromi makeup mirror">
                             <img src="purple mirrors.png" alt="Kuromi Makeup Mirror">
                             <h3>MINISO Kuromi Makeup Mirror</h3>
                             <button class="add-to-cart-btn">+</button>
                         </div>
-                        <div class="product-card" data-id="diffuser1" data-name="MINISO Orange Amber Diffuser" 
-                        data price="15.00" data-image="candle aroma.png" data-description="candle aroma diffuser">
+                        <div class="product-card" data-id="diffuser1" data-name="MINISO Orange Amber Diffuser"
+                        data-price="15.00" data-image="candle aroma.png" data-description="candle aroma diffuser">
                             <img src="candle aroma.png" alt="Candle Aroma Product">
                             <h3>MINISO Orange Amber Diffuser</h3>
                             <button class="add-to-cart-btn">+</button>
@@ -179,35 +179,37 @@
             <p>Student Name: Evette Mendoza </p>
         </div>
         <a href "#" class="scroll-to-top-btn" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></a>
-          <!-- Cart Modal-->
-          <div id="cartModal" class="modal">
+         
+        <!-- Cart Modal-->
+        <div id="cartModal" class="modal">
             <div class="modal-content">
-                <span class="close-modal-btn">x</span>
+                <span class="close-modal-btn">×</span> <!-- Changed x to × -->
                 <h2> My Cart (<span id="cartItemCount">0</span>)</h2>
                 <div id="cartItemsContainer">
                 </div>
+                <div class="cart-summary">
+                    <div class="summary-row">
+                        <span> Subtotal (GST incl.): </span>
+                        <span id="cartSubtotal">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping:</span>
+                        <span id="cartShipping">$10.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>GST:</span>
+                        <span id="cartGST">$0.00</span>
+                    </div>
+                    <hr>
+                    <div class="summary-row total-row">
+                        <span>Total:</span>
+                        <span id="cartTotal">$0.00</span>
+                    </div>
+                </div>
+                <button id="proceedToCheckoutBtn"> Proceed to Checkout</button>
             </div>
         </div>
-        <div class="cart-summary">
-            <div class="summary-row">
-                <span> Subtotal (GST incl.): </span>
-                <span id="cartSubtotal">$0.00</span>
-            </div>
-            <div class="summary-row">
-                <span>Shipping:</span>
-                <span id="cartShipping">$10.00</span>
-            </div>
-            <div class="summary-row">
-                <span>GST:</span>
-                <span id="cartGST">$0.00</span>
-            </div>
-            <hr>
-            <div class="summary-row total-row">
-                <span>Total:</span>
-                <span id="cartTotal">$0.00</span>
-            </div>
-        </div>
-        <button id="proceedToCheckoutBtn"> Proceed to Checkout</button>
+        
     </div>
 </div>
    
