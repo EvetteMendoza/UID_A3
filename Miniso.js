@@ -256,4 +256,154 @@ if(proceedToCheckoutBtn) {
         if (searchTermDisplay) searchTermDisplay.textContent = displayQuery;
         if (searchTermDisplay2) searchTermDisplay2.textContent = displayQuery;
     }
+
+    // --- NEW: PRODUCT DETAIL PAGE LOGIC ---
+    if (document.body.classList.contains('product-detail-page')) {
+        // This function finds product data based on URL (e.g., ?id=we-bare-bears-yellow)
+        const findProductData = () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+            if (!productId || typeof allProducts === 'undefined') {
+                return null;
+            }
+            return allProducts.find(p => p.id === productId);
+        };
+
+        const productData = findProductData();
+
+        const populateProductDetails = (product) => {
+            document.title = `MINISO - ${product.name}`;
+            document.getElementById('product-breadcrumbs').innerHTML = `Home > ${product.name}`;
+            document.getElementById('product-title').textContent = product.name;
+            document.getElementById('product-price-display').textContent = `$${product.price.toFixed(2)}`;
+
+            const descriptionContainer = document.getElementById('product-description-container');
+            const descriptionList = document.createElement('ul');
+            product.descriptionPoints.forEach(point => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<strong>${point.title}</strong> ${point.text}`;
+                descriptionList.appendChild(listItem);
+            });
+            descriptionContainer.innerHTML = '';
+            descriptionContainer.appendChild(descriptionList);
+        };
+
+        const setupImageGallery = (product) => {
+            const mainImage = document.getElementById('main-product-image');
+            const thumbnailsContainer = document.getElementById('product-thumbnails-container');
+            const prevArrow = document.querySelector('.gallery-arrow.prev-arrow');
+            const nextArrow = document.querySelector('.gallery-arrow.next-arrow');
+            let currentIndex = 0;
+
+            if (!mainImage || !thumbnailsContainer || !product.images || product.images.length === 0) return;
+
+            const updateGallery = (index) => {
+                currentIndex = index;
+                mainImage.src = product.images[currentIndex];
+                mainImage.alt = product.name;
+                
+                thumbnailsContainer.querySelectorAll('.thumbnail-item').forEach((thumb, i) => {
+                    thumb.classList.toggle('active-thumb', i === currentIndex);
+                });
+            };
+
+            thumbnailsContainer.innerHTML = '';
+            product.images.forEach((imgSrc, index) => {
+                const thumbDiv = document.createElement('div');
+                thumbDiv.className = 'thumbnail-item';
+                thumbDiv.innerHTML = `<img src="${imgSrc}" alt="Thumbnail ${index + 1}">`;
+                thumbDiv.addEventListener('click', () => updateGallery(index));
+                thumbnailsContainer.appendChild(thumbDiv);
+            });
+
+            prevArrow.addEventListener('click', () => updateGallery((currentIndex - 1 + product.images.length) % product.images.length));
+            nextArrow.addEventListener('click', () => updateGallery((currentIndex + 1) % product.images.length));
+            updateGallery(0);
+        };
+
+        const setupQuantityControls = () => {
+            const decreaseBtn = document.getElementById('decrease-quantity');
+            const increaseBtn = document.getElementById('increase-quantity');
+            const quantityInput = document.getElementById('quantity-input');
+
+            decreaseBtn.addEventListener('click', () => {
+                let currentValue = parseInt(quantityInput.value);
+                if (currentValue > 1) quantityInput.value = currentValue - 1;
+            });
+            increaseBtn.addEventListener('click', () => {
+                let currentValue = parseInt(quantityInput.value);
+                quantityInput.value = currentValue + 1;
+            });
+        };
+
+        const setupAddToCartButton = (product) => {
+            document.getElementById('add-to-cart-detail-btn').addEventListener('click', () => {
+                const quantity = parseInt(document.getElementById('quantity-input').value);
+                const itemToAdd = { ...product.cartData, quantity: quantity };
+                
+                const existingItemIndex = cart.findIndex(item => item.id === itemToAdd.id);
+                if (existingItemIndex > -1) {
+                    cart[existingItemIndex].quantity += quantity;
+                } else {
+                    cart.push(itemToAdd);
+                }
+                openCartModal(); // This is my existing global function
+            });
+        };
+
+        const populateRelatedProducts = (currentProduct) => {
+            const grid = document.getElementById('related-products-grid');
+            if (!grid) return;
+            
+            const related = allProducts.filter(p => p.category === currentProduct.category && p.id !== currentProduct.id);
+            let productsToShow = related.slice(0, 4);
+            if (productsToShow.length < 4) {
+                 const others = allProducts.filter(p => p.category !== currentProduct.category && p.id !== currentProduct.id);
+                 productsToShow.push(...others.slice(0, 4 - productsToShow.length));
+            }
+
+            grid.innerHTML = '';
+            productsToShow.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.dataset.id = product.id;
+                card.dataset.name = product.name;
+                card.dataset.price = product.price;
+                card.dataset.image = product.images[0];
+                card.dataset.description = product.cartData.description;
+
+                card.innerHTML = `
+                    <a href="product-detail.html?id=${product.id}">
+                        <img src="${product.images[0]}" alt="${product.name}">
+                        <h3>${product.name}</h3>
+                    </a>
+                    <p class="product-price">$${product.price.toFixed(2)}</p>
+                    <button class="add-to-cart-btn">+</button>
+                `;
+                grid.appendChild(card);
+            });
+
+            // Re-attach event listeners for the new '+' buttons on related products
+            grid.querySelectorAll('.add-to-cart-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const productDetails = getProductDetails(button);
+                    if (productDetails) {
+                        addToCart(productDetails); // Use existing global function
+                    }
+                });
+            });
+        };
+
+        // --- Initialize Page ---
+        if (productData) {
+            populateProductDetails(productData);
+            setupImageGallery(productData);
+            setupQuantityControls();
+            setupAddToCartButton(productData);
+            populateRelatedProducts(productData);
+        } else {
+            const mainContainer = document.querySelector('.product-detail-section');
+            if(mainContainer) mainContainer.innerHTML = '<h1>404 - Product Not Found</h1><p>Sorry, the product you are looking for does not exist. <a href="shop.html">Return to shop</a>.</p>';
+        }
+    }
 });
