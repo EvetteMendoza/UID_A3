@@ -32,7 +32,13 @@ const cartTotalSpan = document.getElementById('cartTotal');
 const headerCartIcon = document.querySelector('.header-actions .cart-icon-link');
 const proceedToCheckoutBtn = document.getElementById('proceedToCheckoutBtn');
 
-let cart = [];
+// Initialising cart from localStorage or as an empty array
+let cart = JSON.parse(localStorage.getItem('minisoCart')) || [];
+// Function to save the cart to localStorage and update the display
+function saveCartAndDisplay() {
+    localStorage.setItem('minisoCart', JSON.stringify(cart));
+    updateCartDisplay(); // This is your existing function to update the modal
+}
 const SHIPPING_COST = 10.00;
 const GST_CALCULATION_RATE = 2.64 / 29;
 
@@ -76,7 +82,7 @@ function addToCart(productInfo) {
     } else {
         cart.push(productInfo);
     }
-    openCartModal();
+    saveCartAndDisplay(); openCartModal();
 }
 
 function updateCartQuantity(productId, change) {
@@ -87,12 +93,12 @@ function updateCartQuantity(productId, change) {
             cart.splice(itemIndex, 1);
         }
     }
-    updateCartDisplay();
+    saveCartAndDisplay();
 }
 
 function removeItemFromCart(productId) {
     cart = cart.filter(item=> item.id !== productId);
-    updateCartDisplay();
+    saveCartAndDisplay();
 
 }
 
@@ -469,4 +475,5 @@ if (document.body.classList.contains('shop-page')) {
             if(mainContainer) mainContainer.innerHTML = '<h1>404 - Product Not Found</h1><p>Sorry, the product you are looking for does not exist. <a href="shop.html">Return to shop</a>.</p>';
         }
     }
+    updateCartDisplay();
 });
