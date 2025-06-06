@@ -1012,6 +1012,336 @@ footer p {
     border: none;
 }
 
+/* === CHECKOUT & PAYMENT PAGE STYLES === */
+
+.checkout-page-body {
+    background-color: #222;
+    color: #333;
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+.checkout-main {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.checkout-header {
+    padding: 20px 40px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+.checkout-header img {
+    height: 40px;
+    margin: 0 auto;
+}
+
+.checkout-container {
+    display: flex;
+    padding: 30px 40px;
+    gap: 40px;
+    flex-grow: 1;
+}
+
+.checkout-details {
+    flex: 1.5;
+}
+
+.order-summary {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    height: fit-content;
+}
+
+.checkout-details h1 {
+    font-family: 'Kalnia', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.continue-shopping-link {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: #888;
+    text-decoration: underline;
+    margin-bottom: 30px;
+}
+
+.form-group, .info-box, .shipping-options, .payment-methods {
+    margin-bottom: 25px;
+}
+
+.form-group label, .info-box-title, .shipping-options h2, .payment-methods h2 {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.form-group input[type="email"], .form-group input[type="text"], .form-group input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.info-box {
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.info-box-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.info-box-content .fa-map-marker-alt {
+    font-size: 1.5rem;
+    color: #E60012;
+}
+
+.address-details p {
+    margin: 0;
+    line-height: 1.4;
+    font-size: 0.9rem;
+}
+
+.edit-icon {
+    margin-left: auto;
+    cursor: pointer;
+    color: #888;
+}
+
+/* Custom Radio Buttons */
+.radio-option {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    cursor: pointer;
+}
+.radio-option.simple {
+    align-items: center;
+}
+
+.radio-option input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+}
+
+.radio-option label {
+    cursor: pointer;
+    padding-left: 30px;
+    position: relative;
+    width: 100%;
+}
+
+.radio-option label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.radio-option.simple label::before {
+    top: -1px;
+}
+
+.radio-option label::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 7px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    transform: scale(0);
+    transition: transform 0.2s ease;
+}
+.radio-option.simple label::after {
+    top: 4px;
+}
+
+.radio-option input[type="radio"]:checked + label::before {
+    border-color: #E60012;
+    background-color: #E60012;
+}
+
+.radio-option input[type="radio"]:checked + label::after {
+    transform: scale(1);
+}
+
+.radio-title {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.radio-desc {
+    font-size: 0.85rem;
+    color: #888;
+    display: block;
+}
+
+/* Order Summary */
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+.summary-item.total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 15px;
+}
+.order-summary hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 15px 0;
+}
+
+.cart-dropdown {
+    width: 100%;
+    margin: 20px 0;
+}
+.cart-dropdown summary {
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    list-style: none; /* Hide default arrow */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cart-dropdown summary::-webkit-details-marker {
+    display: none;
+}
+.cart-dropdown[open] summary .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.cart-items-preview {
+    padding-top: 10px;
+}
+.preview-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+.preview-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.preview-item-details {
+    flex-grow: 1;
+}
+.preview-item-details .name { margin: 0 0 4px 0; font-weight: 600; }
+.preview-item-details .qty { margin: 0; color: #888; font-size: 0.8rem; }
+.preview-item .price { font-weight: 600; }
+
+.checkout-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.checkout-btn:hover {
+    background-color: #333;
+}
+
+.checkout-footer {
+    height: 40px;
+    background-color: #E60012;
+}
+
+/* Payment Page Specifics */
+.payment-option {
+    align-items: center;
+    flex-wrap: wrap;
+}
+.payment-option.active {
+    border-color: #000;
+}
+.payment-option .payment-icons {
+    margin-left: auto;
+    font-size: 1.5rem;
+    color: #888;
+}
+.payment-option .payment-logo {
+    margin-left: auto;
+    height: 25px;
+}
+.payment-logo.afterpay {
+    height: 15px;
+}
+
+.card-details-form {
+    width: 100%;
+    margin-top: 15px;
+    display: none; /* Hidden by default */
+}
+.payment-option.active .card-details-form {
+    display: block; /* Shown when active */
+}
+.form-group-inline {
+    display: flex;
+    gap: 10px;
+}
+#card-number {
+    position: relative;
+}
+.card-details-form .fa-calendar-alt {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+.card-details-form .form-group {
+    position: relative;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 992px) {
     .header-container nav {

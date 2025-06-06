@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINISO - Checkout</title>
+    <link rel="stylesheet" href="Miniso.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalnia:wght@100..700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="checkout-page-body">
+
+    <main class="checkout-main">
+        <header class="checkout-header">
+            <a href="Miniso.html"><img src="miniso logo.png" alt="MINISO Logo"></a>
+        </header>
+
+        <div class="checkout-container">
+            <!-- Left Column: Details -->
+            <div class="checkout-details">
+                <h1>Guest Checkout</h1>
+                <a href="shop.html" class="continue-shopping-link">← Continue Shopping</a>
+
+                <div class="form-group">
+                    <label for="email">Enter your email address...</label>
+                    <input type="email" id="email" name="email" placeholder="kjslater@hmail.com">
+                    <small>Enter your email address so we can find your Miniso account if you have one / or help you sign-up.</small>
+                </div>
+
+                <div class="info-box">
+                    <p class="info-box-title">Shipping to:</p>
+                    <div class="info-box-content">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="address-details">
+                            <p>18 Melrose Place</p>
+                            <p>New Hampshire</p>
+                            <p>Victoria</p>
+                            <p>3245</p>
+                        </div>
+                        <i class="fas fa-pencil-alt edit-icon"></i>
+                    </div>
+                </div>
+
+                <div class="shipping-options">
+                    <h2>Choose shipping method...</h2>
+                    <div class="radio-option">
+                        <input type="radio" id="standard-shipping" name="shipping" value="standard" data-cost="0" checked>
+                        <label for="standard-shipping">
+                            <span class="radio-title">StarTrack Standard Shipping <span class="price-tag">$0</span></span>
+                            <span class="radio-desc">Orders take 1-2 days to dispatch. Once dispatched please allow approximately 5-8 business days.</span>
+                        </label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="express-shipping" name="shipping" value="express" data-cost="5">
+                        <label for="express-shipping">
+                            <span class="radio-title">StarTrack Express Shipping <span class="price-tag">$5</span></span>
+                            <span class="radio-desc">Orders take 1-2 days to dispatch. Once dispatched please allow approximately 2-5 business days.</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Summary -->
+            <aside class="order-summary">
+                <div class="summary-item">
+                    <span>Subtotal (GST incl.):</span>
+                    <span id="summary-subtotal">$0.00</span>
+                </div>
+                <div class="summary-item">
+                    <span>Shipping:</span>
+                    <span id="summary-shipping">$0.00</span>
+                </div>
+                <div class="summary-item">
+                    <span>GST:</span>
+                    <span id="summary-gst">$0.00</span>
+                </div>
+                <hr>
+                <div class="summary-item total">
+                    <span>Total:</span>
+                    <span id="summary-total">$0.00</span>
+                </div>
+
+                <details class="cart-dropdown">
+                    <summary>My Cart - <span id="summary-item-count">0</span> item(s) <i class="fas fa-chevron-down"></i></summary>
+                    <div class="cart-items-preview" id="cart-items-preview-container">
+                        <!-- Cart items will be injected here by JS -->
+                    </div>
+                </details>
+
+                <button id="continue-to-payment-btn" class="checkout-btn">Continue to Payment</button>
+            </aside>
+        </div>
+
+        <footer class="checkout-footer"></footer>
+    </main>
+
+    <script src="checkout.js"></script>
+</body>
+</html>

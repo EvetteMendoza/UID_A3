@@ -185,19 +185,19 @@ if(headerCartIcon) {
     });
 }
 
-if(proceedToCheckoutBtn) {
-    proceedToCheckoutBtn.addEventListener('click', ()=> {
+if (proceedToCheckoutBtn) {
+    proceedToCheckoutBtn.addEventListener('click', () => {
         if (cart.length > 0) {
-            let currentTotalItems = 0;
-            cart.forEach(item => {
-                currentTotalItems += item.quantity;
-            });
-            alert('Proceeding to checkout with ' + currentTotalItems + ' item(s)! (This is a demo)');
+            // Save the current cart to localStorage to access it on the checkout page
+            localStorage.setItem('minisoCart', JSON.stringify(cart));
+            // Redirect to the new checkout page
+            window.location.href = 'checkout.html';
         } else {
             alert('Your cart is empty. Add some items first!');
         }
     });
-} 
+}
+
 
 
     // Mobile Menu Toggle

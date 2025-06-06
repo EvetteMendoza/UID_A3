@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINISO - Payment</title>
+    <link rel="stylesheet" href="Miniso.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalnia:wght@100..700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="checkout-page-body">
+
+    <main class="checkout-main">
+        <header class="checkout-header">
+            <a href="Miniso.html"><img src="miniso logo.png" alt="MINISO Logo"></a>
+        </header>
+
+        <div class="checkout-container">
+            <!-- Left Column: Details -->
+            <div class="checkout-details">
+                <h1>Guest Checkout</h1>
+                <a href="checkout.html" class="continue-shopping-link">← Go back</a>
+
+                <div class="info-box">
+                    <p class="info-box-title">Billing Address</p>
+                    <div class="radio-option simple">
+                        <input type="radio" id="same-address" name="billing" value="same" checked>
+                        <label for="same-address">Same as shipping address</label>
+                    </div>
+                </div>
+
+                <div class="payment-methods">
+                    <h2>Choose payment method...</h2>
+                    <div class="radio-option payment-option active">
+                        <input type="radio" id="credit-card" name="payment" value="card" checked>
+                        <label for="credit-card">Debit or credit card</label>
+                        <div class="payment-icons">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-amex"></i>
+                        </div>
+                        <div class="card-details-form">
+                            <div class="form-group">
+                                <input type="tel" id="card-number" placeholder="xxxx xxxx xxxx xxxx">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="card-name" placeholder="Raylee Jhad">
+                            </div>
+                            <div class="form-group-inline">
+                                <input type="text" id="card-expiry" placeholder="Expiry MM/YY">
+                                <input type="text" id="card-cvc" placeholder="Security code">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="radio-option payment-option">
+                        <input type="radio" id="paypal" name="payment" value="paypal">
+                        <label for="paypal">Paypal</label>
+                        <img src="https://www.paypalobjects.com/webstatic/mktg/logo-center/PP_Acceptance_Marks_for_LogoCenter_150x38.png" alt="Paypal Logo" class="payment-logo">
+                    </div>
+                    <div class="radio-option payment-option">
+                        <input type="radio" id="paypal-in-4" name="payment" value="paypal4">
+                        <label for="paypal-in-4">Paypal Pay in 4</label>
+                         <img src="https://www.paypalobjects.com/webstatic/mktg/logo-center/PP_Acceptance_Marks_for_LogoCenter_150x38.png" alt="Paypal Logo" class="payment-logo">
+                    </div>
+                    <div class="radio-option payment-option">
+                        <input type="radio" id="afterpay" name="payment" value="afterpay">
+                        <label for="afterpay">Afterpay</label>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Afterpay_Logo.svg/1280px-Afterpay_Logo.svg.png" alt="Afterpay Logo" class="payment-logo afterpay">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Summary -->
+            <aside class="order-summary">
+                <div class="summary-item">
+                    <span>Subtotal (GST incl.):</span>
+                    <span id="summary-subtotal">$0.00</span>
+                </div>
+                <div class="summary-item">
+                    <span>Shipping:</span>
+                    <span id="summary-shipping">$0.00</span>
+                </div>
+                 <div class="summary-item">
+                    <span>GST:</span>
+                    <span id="summary-gst">$0.00</span>
+                </div>
+                <hr>
+                <div class="summary-item total">
+                    <span>Total:</span>
+                    <span id="summary-total">$0.00</span>
+                </div>
+
+                <details class="cart-dropdown">
+                    <summary>My Cart - <span id="summary-item-count">0</span> item(s) <i class="fas fa-chevron-down"></i></summary>
+                    <div class="cart-items-preview" id="cart-items-preview-container">
+                        <!-- Cart items will be injected here by JS -->
+                    </div>
+                </details>
+
+                <button id="place-order-btn" class="checkout-btn">Place Order</button>
+            </aside>
+        </div>
+
+        <footer class="checkout-footer"></footer>
+    </main>
+
+    <script src="checkout.js"></script>
+</body>
+</html>
