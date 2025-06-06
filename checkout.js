@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.removeItem('minisoShippingCost');
             
             setTimeout(() => {
-                window.location.href = 'Miniso.html';
+                window.location.href = 'index.html';
             }, 1500); // Wait 1.5 seconds before redirecting
         });
 
