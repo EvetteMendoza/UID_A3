@@ -237,25 +237,88 @@ if (proceedToCheckoutBtn) {
     }
 
     // -- Specific for shop.html -- 
-    if(document.body.classList.contains('shop-page')) {
-        const urlParams = new URLSearchParams(window.location.search);
-        const category = urlParams.get('category');
-        const query =urlParams.get('q');
+if (document.body.classList.contains('shop-page')) {
+    // --- Existing URL and Search Term Display Logic ---
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get('category');
+    const query = urlParams.get('q');
 
-        const searchTermDisplay = 
-        document.getElementById('searchTermDisplay');
-        const searchTermDisplay2 =
-        document.getElementById('searchTermDisplay2');
+    const searchTermDisplay = document.getElementById('searchTermDisplay');
+    const searchTermDisplay2 = document.getElementById('searchTermDisplay2');
 
-        let displayQuery = "products"; 
-        if (category) {
-            displayQuery = category.replace(/-/g, ' ').replace (/\b\w/g, l => l.toUpperCase());
-        } else if (query) {
-            displayQuery = query;
-        }
-        if (searchTermDisplay) searchTermDisplay.textContent = displayQuery;
-        if (searchTermDisplay2) searchTermDisplay2.textContent = displayQuery;
+    let displayQuery = "All Products";
+    if (category) {
+        displayQuery = category.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    } else if (query) {
+        displayQuery = query;
     }
+    if (searchTermDisplay) searchTermDisplay.textContent = displayQuery;
+    if (searchTermDisplay2) searchTermDisplay2.textContent = displayQuery;
+
+    // --- NEW SORTING FUNCTIONALITY ---
+    const sortBySelect = document.getElementById('sort-by');
+    const productGrid = document.querySelector('.shop-product-grid');
+
+    // Store the original, unsorted product cards
+    const originalProductCards = Array.from(productGrid.querySelectorAll('.product-card'));
+
+    // Function to re-render the product grid with a new order of cards
+    function renderProductGrid(sortedCards) {
+        // Clear the grid first
+        productGrid.innerHTML = '';
+        // Append the sorted cards back into the grid
+        sortedCards.forEach(card => {
+            productGrid.appendChild(card);
+        });
+        // IMPORTANT: Re-attach event listeners for the 'Add to Cart' buttons after re-rendering
+        productGrid.querySelectorAll('.add-to-cart-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const productDetails = getProductDetails(button);
+                if (productDetails) {
+                    addToCart(productDetails);
+                }
+            });
+        });
+    }
+
+    // Event listener for the sort-by dropdown
+    sortBySelect.addEventListener('change', (event) => {
+        const sortValue = event.target.value;
+        let sortedCards = [...originalProductCards]; // Create a copy to sort
+
+        switch (sortValue) {
+            case 'price-asc':
+                // Sort by price: Low to High
+                sortedCards.sort((a, b) => {
+                    const priceA = parseFloat(a.dataset.price);
+                    const priceB = parseFloat(b.dataset.price);
+                    return priceA - priceB;
+                });
+                break;
+            case 'price-desc':
+                // Sort by price: High to Low
+                sortedCards.sort((a, b) => {
+                    const priceA = parseFloat(a.dataset.price);
+                    const priceB = parseFloat(b.dataset.price);
+                    return priceB - priceA;
+                });
+                break;
+            case 'newest':
+                // This is a placeholder. For true "newest", you'd need a date in your product data.
+                // For now, we'll reverse the original order as a demonstration.
+                sortedCards.reverse();
+                break;
+            case 'featured':
+            default:
+                // "Featured" simply returns to the original order from the HTML
+                sortedCards = originalProductCards;
+                break;
+        }
+
+        // Re-render the grid with the newly sorted cards
+        renderProductGrid(sortedCards);
+    });
+}
 
     // --- NEW: PRODUCT DETAIL PAGE LOGIC ---
     if (document.body.classList.contains('product-detail-page')) {
