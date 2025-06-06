@@ -154,38 +154,27 @@ header nav ul li a:hover {
 }
 
 /* Hero Section */
+/* === CORRECTED HERO SECTION STYLES === */
+
 .hero-section {
-    /*background-image: url('miniso\ banner.jpg'); */
-    background-size: cover;                        
-    background-position: center center;          
-    background-repeat: no-repeat;                  
-    width: 100%;                                   
-    /* display: flex; align-items: center; etc. are for the CONTENT inside */
+    background-image: url('miniso banner with text.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 60vh; /* 60% of the viewport height. Adjust as needed. */
+    
+    /* Keep these for any text/buttons you might add over the banner */
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* This positions .hero-content */
-    color: #333;
-    /* Remove padding-left from hero-section if you want the content to be managed by .hero-content only */
-    /* padding-left: 10%; */ /* You might want this on .hero-content instead */
-    text-align: left; /* This also likely belongs on .hero-content */
-    position: relative; /* Good for positioning child elements if needed */
-    overflow: hidden;
-}
-
-.hero-section img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
+    justify-content: center;
 }
 
 .hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-    color: #fff;
+    /* This is a placeholder for text or buttons if you add them later */
+    /* Example: */
+    /* text-align: center; */
+    /* color: white; */
 }
 
 .spacer-half-line {
@@ -1338,10 +1327,6 @@ footer p {
     .search-bar input {
         width: 100px;
     }
-    .hero-section {
-        padding-left: 5%;
-        height: 400px;
-    }
     .hero-content h1 { font-size: 2.5rem; }
     .hero-content h2 { font-size: 1.3rem; }
 }
@@ -1367,13 +1352,6 @@ footer p {
         display: none; /* Simpler: hide search bar, rely on icon */
     }
     .icon-link { margin-left: 15px; }
-
-    .hero-section {
-        justify-content: center;
-        text-align: center;
-        padding: 0 15px;
-        height: 350px;
-    }
     .hero-content {
         padding: 0;
         text-align: center;
