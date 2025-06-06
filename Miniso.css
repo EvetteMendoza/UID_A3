@@ -999,18 +999,6 @@ footer p {
     margin-bottom: 0;
 }
 
-.scroll-up-related-btn {
-    background-color: #E60012;
-    color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-}
 .checkout-page-body {
     /* Keep the font, but move the background color */
     color: #333;
