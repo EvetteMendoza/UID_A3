@@ -5,7 +5,7 @@ const allProducts =  [
         id:"we-bare-bears-yellow",
         name: "MINISO We Bare Bears Plushie Toy",
         price: 29.00,
-        images: ["yellow bear front.png", "yellow bear side.png", "yellow bear back.png"],
+        images: ["yellow bear front.png", "yellow bear side.png", "yellow bear persp.png"],
         descriptionPoints: [
             { title: "Premium Quality", text: "The toy is ultra soft and velvet feeling which is durable, washable, and not easy to deform."}, 
             { title: "IP Design", text: "Officially licensed We Bare Bears produced by MINISO. The bear features adorable facial expression hugging a red heart made it much realistic looking and lovely." }, 
@@ -24,7 +24,7 @@ const allProducts =  [
         id:"we-bare-bears-panda-halloween",
         name:"MINISO We Bare Bears Panda Halloween Plushie Toy",
         price: 29.00,
-        images: ["bear in halloween purple.png", "bear_halloween_detail1.png", "bear_halloween_detail2.png"],
+        images: ["bear in halloween purple.png"],
         descriptionPoints: [
             { title: "Festive Fun", text: "Perfect for Halloween, this Panda is dressed to spook and delight." }, 
             { title: "Soft & Cuddly", text: "Made with MINISO's signature soft materials, great for hugs." }
@@ -42,7 +42,7 @@ const allProducts =  [
         id: "panda-plushie",
         name: "MINISO We Bare Bears Panda Plushie Toy",
         price: 30.00, 
-        images: ["panda persp.png", "panda_detail1.png", "panda_detail2.png"], // Corrected main image
+        images: ["panda persp.png"], // Corrected main image
         descriptionPoints: [
             { title: "Classic Panda", text: "The iconic Panda from We Bare Bears, ready for adventure."},
             { title: "High Quality", text: "Durable and made with love by MINISO." }
@@ -60,7 +60,7 @@ const allProducts =  [
         id: "sakura-cat",
         name: "MINISO Sakura Cat Plushie Toy",
         price: 30.00,
-        images: ["cat front.png", "cat_detail1.png", "cat_detail2.png"],
+        images: ["cat front.png"],
         descriptionPoints: [
             { title: "Adorable Design", text: "Charming Sakura-themed cat plushie with a bell."},
             { title: "Perfect Gift", text: "A delightful gift for cat lovers and plushie collectors."}
@@ -78,7 +78,7 @@ const allProducts =  [
         id: "pink-penguin",
         name: "MINISO Pink Penguin Plushie Toy",
         price: 22.00,
-        images: ["penguin pink.png", "penguin_detail1.png", "penguin_detail2.png"],
+        images: ["penguin pink.png"],
         descriptionPoints: [
             { title: "Sweet & Soft", text: "A very soft and squishy pink penguin, perfect for cuddles."},
             { title: "Unique Character", text: "Add this cute penguin to your collection."}
@@ -186,7 +186,7 @@ const allProducts =  [
         id: "oink-plushie",
         name: "MINISO Oink Plushie Toy",
         price: 22.00,
-        images: ["pig front.png", "pig 2.png", "pig 3.png"],
+        images: ["pig 1.png", "pig 2.png", "pig 3.png"],
         descriptionPoints: [
            { title: "Sweet & Soft", text: "A very soft and squishy pink pig, perfect for cuddles."},
            { title: "Perfect Gift", text: "A delightful gift for piglet lovers and plushie collectors."}
@@ -196,7 +196,7 @@ const allProducts =  [
             id: "oink-plushie",
             name: "MINISO Oink Plushie Toy",
             price: 22.00, 
-            imageSrc: "pig front.png",
+            imageSrc: "pig 1.png",
             description: "9 inches wide"
         }
     }, 
