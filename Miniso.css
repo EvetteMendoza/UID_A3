@@ -1014,17 +1014,24 @@ footer p {
 
 /* === CHECKOUT & PAYMENT PAGE STYLES === */
 
+/* === CORRECTED CHECKOUT & PAYMENT PAGE STYLES === */
+
 .checkout-page-body {
-    background-color: #222;
+    /* Keep the font, but move the background color */
     color: #333;
     font-family: 'Roboto Slab', sans-serif;
+}
+
+.checkout-page-wrapper {
+    background-color: #222; /* Dark background is now on the full-width wrapper */
+    padding: 30px 15px;      /* Added some vertical spacing */
+    min-height: 100vh;
 }
 
 .checkout-main {
     max-width: 1000px;
     margin: 0 auto;
     background-color: #fff;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
