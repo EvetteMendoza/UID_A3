@@ -154,35 +154,26 @@ header nav ul li a:hover {
 }
 
 /* Hero Section */
-/* === CORRECTED HERO SECTION STYLES === */
 
 .hero-section {
-    background-image: url('miniso banner with text.jpg');
-    background-size: cover;
-    background-position: center center;
+    width: 100%;
+    aspect-ratio: 1364 / 599;
+    /*background-image: url('miniso banner with text.jpg'); */
+    background-size: cover; /* 'cover' is correct when aspect-ratios match */
+    background-position: center;
     background-repeat: no-repeat;
-    height: 60vh; /* 60% of the viewport height. Adjust as needed. */
-    
-    /* Keep these for any text/buttons you might add over the banner */
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .hero-content {
-    /* This is a placeholder for text or buttons if you add them later */
-    /* Example: */
-    /* text-align: center; */
-    /* color: white; */
+    /* Placeholder for content */
 }
 
 .spacer-half-line {
     /*height: 1em;*/
   }
 
-/* New In Section */
 
+  /* New In Section */
 .new-in-section {
     padding: 50px 0;
     background-color: #fff;
@@ -1327,8 +1318,6 @@ footer p {
     .search-bar input {
         width: 100px;
     }
-    .hero-content h1 { font-size: 2.5rem; }
-    .hero-content h2 { font-size: 1.3rem; }
 }
 
 @media (max-width: 768px) {
@@ -1352,12 +1341,6 @@ footer p {
         display: none; /* Simpler: hide search bar, rely on icon */
     }
     .icon-link { margin-left: 15px; }
-    .hero-content {
-        padding: 0;
-        text-align: center;
-    }
-    .hero-content h1 { font-size: 2rem; }
-    .hero-content h2 { font-size: 1.1rem; text-align: center;}
 
     .product-carousel-wrapper {
         padding: 0 10px; /* Less padding for arrows */
